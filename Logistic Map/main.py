@@ -52,13 +52,10 @@ class CL:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=
                                      'Logistic Map with control parameter')
-    parser.add_argument("--alpha", dest="alpha",
+    parser.add_argument("--alpha", dest="alpha", default=0.9, 
                         help='This option is used to set the alpha')
     args = parser.parse_args()
-    if args.alpha:
-        alphaIn = args.alpha
-    else:
-        alphaIn = 0.9
+    alphaIn = args.alpha
 
     myLogisticMap = CL()
     myLogisticMap.loadProgram("verhulst.cl")
